@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/*
+ * Copyright 2008-2018 futengwl.com. All rights reserved.
+ * Support: http://www.futengwl.com
+ * License: http://www.futengwl.com/license
+ *
+ * Style - Consultation
+ * Version: 6.0
+ */
+
+/* ---------- add-consultation ---------- */
+.add-consultation main {
+	padding: 10px;
+}
+
+.add-consultation main .media {
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+.add-consultation main .media .media-left a img {
+	width: 80px;
+	height: 80px;
+	padding: 2px;
+	border: solid 1px #e8e8e8;
+}
+
+.add-consultation main .media .media-body span {
+	display: block;
+}

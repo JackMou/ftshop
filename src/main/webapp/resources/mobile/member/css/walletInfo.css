@@ -1,0 +1,42 @@
+h6{
+    line-height: inherit;
+}
+.bg{
+    margin: 0.17rem 0.8rem;
+    width: 361px;
+    height: 253px;
+    background: url(../images/wallet.png) no-repeat center center;
+}
+
+.money{
+    margin-top: 0.28rem;
+    text-align:center;
+
+
+}
+span{
+    color: #858585;
+    font-size: 13px;
+    text-align:center;
+}
+.ts{
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    color: #ccc;
+    font-size: 10px;
+    text-align: center;
+}
+.amount{
+    margin-top: 0.29rem;
+    color: #322;
+    font-size: 36px;
+    text-align:center;
+}
+.sf{
+    font-size: 20px;
+}
+.form-group{
+    margin: 0.6rem;
+
+}

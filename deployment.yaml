@@ -1,0 +1,55 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: myyshop
+  namespace: development
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myyshop
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node2
+      containers:
+      - image: registry.meia8.com/myy/ftshop:latest
+        imagePullPolicy: Always
+        name: myyshop
+        volumeMounts:
+        - mountPath: /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/ftshop.properties
+          name: config
+        - mountPath: /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/ftshop.xml
+          name: ftshopxml
+        - mountPath: /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/httpclient.properties
+          name: httpclient
+        - mountPath: /usr/local/tomcat/webapps/ROOT/upload
+          name: upload
+        - mountPath: /Users/john/Codes/apiclient_cert.p12
+          name: apiclientcert
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 8000Mi
+          requests:
+            cpu: 100m
+            memory: 3000Mi
+      imagePullSecrets:
+      - name: "registry.meia8.com"
+      restartPolicy: Always
+      volumes:
+      - hostPath:
+          path: /opt/data/meiyaya/myyshop/ftshop.properties
+        name: config
+      - hostPath:
+          path: /opt/data/meiyaya/myyshop/ftshop.xml
+        name: ftshopxml
+      - hostPath:
+          path: /opt/data/meiyaya/myyshop/httpclient.properties
+        name: httpclient
+      - hostPath:
+          path: /opt/data/meiyaya/myyshop/upload
+        name: upload
+      - hostPath:
+          path: /opt/data/meiyaya/myyshop/ssl/apiclient_cert.p12
+        name: apiclientcert

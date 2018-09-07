@@ -1,0 +1,6 @@
+FTSHOP
+Copyright 2008-2018 futengwl.com. All rights reserved.
+Support: http://www.futengwl.com
+License: http://www.futengwl.com/license
+Revision: 1.0.0 RELEASE
+Date: 2018-01

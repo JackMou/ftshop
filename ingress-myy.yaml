@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-myyshop-new
+  namespace: development
+spec:
+  tls:
+  - hosts:
+    - www.520myy.com
+    secretName: www.520myy.com
+  rules:
+  - host: www.520myy.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: myyshop
+          servicePort: 80
